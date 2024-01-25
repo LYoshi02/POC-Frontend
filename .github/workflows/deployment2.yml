@@ -54,10 +54,12 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist-files
+      - name: Display structure of downloaded files
+        run: ls -R
       - name: Deploy production to Netlify
         uses: nwtgck/actions-netlify@v2.1.0
         with:
-          publish-dir: 'dist-files'
+          publish-dir: './dist'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Testing workflow (2)"
           production-deploy: true
