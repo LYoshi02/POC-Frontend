@@ -55,8 +55,6 @@ jobs:
         with:
           name: dist-files
           path: dist
-      - name: Display structure of downloaded files
-        run: ls -R
       - name: Deploy production to Netlify
         uses: nwtgck/actions-netlify@v2.1.0
         with:
