@@ -61,7 +61,7 @@ jobs:
           publish-dir: './dist'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Testing workflow (2)"
-          production-deploy: true
+          production-deploy: false
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
