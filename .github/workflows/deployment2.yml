@@ -2,16 +2,21 @@ name: Deploy application to Netlify (2)
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy'
+        type: environment
+        required: true
 
 # Allow one concurrent deployment
 concurrency:
-  group: 'pages'
+  group: 'deploy-group'
   cancel-in-progress: true
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    environment: prod
+    environment: ${{ inputs.environment }}
     steps:
       - name: Get code
         uses: actions/checkout@v4
