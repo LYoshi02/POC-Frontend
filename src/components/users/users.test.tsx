@@ -1,8 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import { HttpResponse, http } from "msw";
 
-import { Users } from "./Users";
 import { server } from "../../test/server/server";
+
+import { Users } from "./users";
 
 describe("Users", () => {
   test("renders correctly", () => {
